@@ -1,24 +1,25 @@
 package edu.spring.istfi.model;
 
-import javax.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
 public class Cliente {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int DNI;
-    private int CUIT;
+    private int dni;
+    private int cuit;
     private String Nombre;
     private String Apellido;
     private String razonSocial;
-
+    @ManyToOne
     private Direccion direccion;
 
     // Constructor
-    public Cliente(int id, int DNI, int CUIT, String razonSocial,String Nombre,String Apellido ,Direccion direccion) {
+    public Cliente(int id, int dni, int cuit, String razonSocial,String Nombre,String Apellido ,Direccion direccion) {
         this.id = id;
-        this.DNI = DNI;
-        this.CUIT = CUIT;
+        this.dni = dni;
+        this.cuit = cuit;
         this.razonSocial = razonSocial;
         this.Nombre=Nombre;
         this.Apellido=Apellido;
@@ -42,20 +43,20 @@ public class Cliente {
         this.id = id;
     }
 
-    public int getDNI() {
-        return DNI;
+    public int getdni() {
+        return dni;
     }
 
-    public void setDNI(int DNI) {
-        this.DNI = DNI;
+    public void setdni(int dni) {
+        this.dni = dni;
     }
 
-    public int getCUIT() {
-        return CUIT;
+    public int getcuit() {
+        return cuit;
     }
 
-    public void setCUIT(int CUIT) {
-        this.CUIT = CUIT;
+    public void setcuit(int cuit) {
+        this.cuit = cuit;
     }
 
     public String getRazonSocial() {

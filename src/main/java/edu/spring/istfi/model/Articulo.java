@@ -1,8 +1,5 @@
 package edu.spring.istfi.model;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Articulo {
@@ -14,9 +11,11 @@ public class Articulo {
     private double costo;
     private double margenDeGanancia;
     private double iva = 0.21;
-
+    @ManyToOne
     private Talle talle;
+    @ManyToOne
     private Color color;
+    @ManyToOne
     private Marca marca;
 
     public Categoria getCategoria() {
@@ -26,7 +25,7 @@ public class Articulo {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
-
+    @ManyToOne
     private Categoria categoria;
 
     public void setTalle(Talle talle) {

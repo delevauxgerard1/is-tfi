@@ -1,10 +1,26 @@
 package edu.spring.istfi.model;
 
+import jakarta.persistence.Entity;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+@Entity
 public class Direccion {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private int codigo;
     private int codigoPostal;
     private String calle;
     private int numero;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Direccion(int codigo, int codigoPostal, String calle, int numero) {
         this.codigo = codigo;

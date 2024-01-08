@@ -28,7 +28,7 @@ public class ClienteTest {
 
         Cliente clienteEncontrado = servicio.buscarClienteporDni(12345678);
 
-        assertEquals(12345678, clienteEncontrado.getDNI());
+        assertEquals(12345678, clienteEncontrado.getdni());
 
 
         verify(clienteRepository, times(1)).findByDni(12345678);
